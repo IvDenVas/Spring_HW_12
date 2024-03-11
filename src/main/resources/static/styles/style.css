@@ -1,0 +1,42 @@
+body {
+    background-color: silver;
+}
+
+.container1 {
+    background-color:white;
+    padding: 5px;
+    max-width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+h2, input{
+    text-align: center;
+}
+
+header{
+    background-color: gray;
+    padding: 10px;
+    max-height: 200px;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+th {
+    font-weight: normal;
+    color: #039;
+    border-bottom: 2px solid #6678b1;
+    padding: 10px 8px;
+}
+td {
+    color: #669;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+tr:hover td {
+    color: #6699ff;
+}

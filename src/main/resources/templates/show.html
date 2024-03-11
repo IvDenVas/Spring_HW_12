@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/style.css">
+</head>
+<main>
+    <body>
+    <div class="container1">
+        <h2>Список заметок</h2>
+        <form action="/main" method="post">
+            <label>Новая заметка</label>
+            <input type="text" name="title" placeholder="Введите заголовок">
+            <input size="90" type="text" name="description" placeholder="Введите заметку">
+
+            <input type="submit" value="Добавить">
+        </form>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата создания</th>
+                <th>Заголовок</th>
+                <th>Описание</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="note: ${notes}">
+                <td style="width:10%" th:text="${note.getId()}"></td>
+                <td style="width:10%" th:text="${note.getDateTime()}"></td>
+                <td style="width:20%" th:text="${note.getTitle()}"></td>
+                <td style="width:50%" th:text="${note.getDescription}"></td>
+                <td><a th:href="@{main/update/{id}(id=${note.id})}"><button>Изменить</button></a></td>
+                <td><a th:href="@{main/delete/{id}(id=${note.id})}"><button>Удалить</button></a></td>
+                <!--                <td><a th:href="@{user-delete/{id}(id=${user.id})}">Delete</a></td>-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+</main>
+</html>

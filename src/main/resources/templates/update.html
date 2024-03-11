@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/style.css">
+</head>
+<main>
+    <body>
+    <div class="container1">
+        <h2>Измените описание заметки</h2>
+        <form th:action="@{/main}" th:object="${note}" th:method="post" method="post">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Дата создания</th>
+                    <th>Заголовок</th>
+                    <th>Описание</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="width:10%" ><input readonly type="number" th:field="*{id}" id="id"></td>
+                    <td style="width:10%" ><input readonly type="text" th:field="*{dateTime}" id="dateTime"></td>
+                    <td style="width:20%" ><input readonly type="text" th:field="*{title}" id="title"></td>
+                    <td style="width:50%" ><input size="43%" type="text" th:field="*{description}" id="description"></td>
+                    <td><a><input type="submit" value="Изменить"></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+    </body>
+</main>
+</html>
